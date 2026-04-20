@@ -293,7 +293,7 @@
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 52px;
-      align-items: center;
+      align-items: start;
     }
     .gallery-strip {
       display: flex;
@@ -329,6 +329,12 @@
       margin-bottom: 28px;
       max-width: 440px;
     }
+    .cta-bio p {
+      font-size: 13.5px;
+      margin-bottom: 14px;
+      max-width: 440px;
+    }
+    .cta-bio p:last-child { margin-bottom: 26px; }
 
     /* ─── Instagram Strip ─── */
     .instagram-section {
@@ -453,6 +459,200 @@
       margin: 0;
     }
 
+    /* ─── Bilingual bio (EN default, FR when body.lang-fr) ─── */
+    .bio-fr { display: none; }
+    body.lang-fr .bio-fr { display: block; }
+    body.lang-fr .bio-en { display: none; }
+
+    /* ─── Pricing Section ─── */
+    .pricing-section {
+      background: var(--cream);
+      padding: 72px 48px 80px;
+    }
+    .pricing-section-title {
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .pricing-section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .pricing-section-title p {
+      font-size: 13.5px;
+      color: var(--taupe);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+    .pricing-cards {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .pricing-card {
+      background: var(--warm-white);
+      border: 1px solid var(--sand);
+      border-radius: 14px;
+      padding: 40px 38px 34px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 38px rgba(90, 76, 68, 0.09);
+    }
+    .pricing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .pricing-tag {
+      font-size: 13px;
+      color: var(--taupe);
+      font-weight: 300;
+      margin-bottom: 30px;
+      line-height: 1.55;
+      min-height: 20px;
+    }
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 34px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(217, 207, 196, 0.5);
+    }
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      line-height: 1;
+    }
+    .price-unit {
+      font-size: 12.5px;
+      color: var(--taupe);
+      font-weight: 300;
+    }
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+      flex-grow: 1;
+    }
+    .pricing-features li {
+      font-size: 13.5px;
+      color: var(--soft-brown);
+      line-height: 1.5;
+      padding: 9px 0 9px 26px;
+      position: relative;
+      font-weight: 400;
+    }
+    .pricing-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 12px;
+      height: 6px;
+      border-left: 1.8px solid var(--btn-bg);
+      border-bottom: 1.8px solid var(--btn-bg);
+      transform: rotate(-45deg);
+    }
+    .pricing-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 15px 24px;
+      font-size: 11.5px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-top: auto;
+      box-sizing: border-box;
+    }
+
+    /* ─── Inline bilingual text swap (for short strings) ─── */
+    .t-fr { display: none; }
+    body.lang-fr .t-fr { display: inline; }
+    body.lang-fr .t-en { display: none; }
+
+    /* ─── Language Toggle (EN / FR) ─── */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 28px;
+    }
+    .lang-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.4px;
+      color: var(--taupe);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 3px;
+      transition: color 0.3s;
+    }
+    .lang-btn:hover { color: var(--soft-brown); }
+    .lang-btn.active {
+      color: var(--soft-brown);
+      font-weight: 600;
+    }
+    .lang-sep {
+      color: var(--sand);
+      font-size: 11px;
+      line-height: 1;
+    }
+    .mobile-lang {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid var(--sand);
+      margin-top: 4px;
+    }
+    .mobile-lang .lang-btn { font-size: 13px; }
+
+    /* ─── Hide Google Translate default UI ─── */
+    #google_translate_element {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      visibility: hidden;
+      height: 0;
+      overflow: hidden;
+    }
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    .goog-tooltip,
+    #goog-gt-tt {
+      display: none !important;
+    }
+    body.translated-ltr,
+    body.translated-rtl {
+      top: 0 !important;
+      position: static !important;
+    }
+    .goog-text-highlight {
+      background: none !important;
+      box-shadow: none !important;
+    }
+    font[style*="background-color"] {
+      background: transparent !important;
+    }
+
     /* ─── Scrollbar ─── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--warm-white); }
@@ -481,6 +681,16 @@
       .gallery-cta { padding: 28px 24px 60px; }
       .instagram-section { padding: 40px 24px; }
       .site-footer { padding: 40px 24px 28px; }
+      .pricing-section { padding: 56px 24px 64px; }
+      .pricing-section-title h2 { font-size: 32px; }
+      .pricing-cards {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        gap: 20px;
+      }
+      .pricing-card { padding: 34px 28px 28px; }
+      .pricing-card h3 { font-size: 26px; }
+      .price-amount { font-size: 44px; }
 
       .about-inner {
         grid-template-columns: 1fr;
@@ -510,28 +720,47 @@
   </style>
 </head>
 <body>
+  <script>
+    // Set body language class synchronously from googtrans cookie (avoids bio flicker)
+    (function () {
+      var m = document.cookie.match(/googtrans=\/en\/(\w+)/);
+      if (m && m[1] === 'fr') document.body.classList.add('lang-fr');
+    })();
+  </script>
 
   <!-- ═══════════ HEADER ═══════════ -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="#" class="logo">Karin Pilates Body Control</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#classes">Classes</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="mob-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="#" class="logo" translate="no">Karin Pilates Body Control</a>
+      <div style="display:flex; align-items:center;">
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="lang-toggle" translate="no">
+          <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+          <span class="lang-sep">/</span>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+        <button class="mob-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
     <div class="mobile-menu">
       <a href="#home" onclick="this.parentElement.classList.remove('open')">Home</a>
       <a href="#about" onclick="this.parentElement.classList.remove('open')">About</a>
       <a href="#classes" onclick="this.parentElement.classList.remove('open')">Classes</a>
       <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+      <div class="mobile-lang" translate="no">
+        <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      </div>
     </div>
   </header>
 
@@ -567,9 +796,19 @@
           <div class="reveal reveal-d1">
             <h2>Meet Karin</h2>
           </div>
-          <div class="reveal reveal-d2">
-            <p>From Sweden to Paris and now Valencia, Karin brings years of Classical Pilates training and international experience.</p>
-            <p>Her approach focuses on precision, control, and mindful movement. Through small classes and personalized sessions, she helps clients develop strength, balance, and body awareness.</p>
+          <div class="reveal reveal-d2" translate="no">
+            <div class="bio-en">
+              <p>Originally from Sweden, I've always been passionate about movement, wellbeing, and the balance between body and mind. It's this philosophy of life that naturally led me to Pilates.</p>
+              <p>After several years of practice and training, I discovered how deeply this method can transform the relationship we have with our own body. Pilates has taught me the importance of posture, breath, and deep strengthening — always while honouring each person's own rhythm.</p>
+              <p>Today, my aim is to share this approach with my students and to guide them through work that is both gentle and effective. My classical mat Pilates classes are designed to help each person feel stronger, more aligned, and more at ease in their own body.</p>
+              <p>Whether you are a beginner or a seasoned practitioner, you are welcome in a caring space where we take the time to listen to the body and progress at your own pace.</p>
+            </div>
+            <div class="bio-fr">
+              <p>Originaire de Suède, j'ai toujours été passionnée par le mouvement, le bien-être et l'équilibre entre le corps et l'esprit. C'est cette philosophie de vie qui m'a naturellement menée vers le Pilates.</p>
+              <p>Après plusieurs années de pratique et de formation, j'ai découvert à quel point cette méthode pouvait transformer la relation que l'on entretient avec son corps. Le Pilates m'a appris l'importance de la posture, de la respiration et du renforcement en profondeur, tout en respectant le rythme de chacun.</p>
+              <p>Aujourd'hui, mon objectif est de partager cette approche avec mes élèves et de les accompagner dans un travail à la fois doux et efficace. Mes cours de Pilates classique sur tapis sont pensés pour aider chacun à se sentir plus fort, plus aligné et plus en harmonie avec son corps.</p>
+              <p>Que vous soyez débutant ou pratiquant confirmé, je vous accueille dans un espace bienveillant où l'on prend le temps d'écouter son corps et de progresser à son rythme.</p>
+            </div>
           </div>
           <div class="reveal reveal-d3">
             <a href="#contact" class="btn-pill">Learn More</a>
@@ -605,6 +844,88 @@
     </div>
   </section>
 
+  <!-- ═══════════ PRICING (EN) ═══════════ -->
+  <section id="pricing" class="pricing-section bio-en" translate="no">
+    <div class="pricing-section-title reveal">
+      <h2>Classes &amp; Rates</h2>
+      <p>Choose the option that suits you.</p>
+    </div>
+    <div class="pricing-cards">
+      <article class="pricing-card reveal reveal-d1">
+        <h3>Discovery</h3>
+        <p class="pricing-tag">Perfect for your first experience.</p>
+        <div class="pricing-price">
+          <span class="price-amount">€10</span>
+          <span class="price-unit">/ session</span>
+        </div>
+        <ul class="pricing-features">
+          <li>55-minute group class</li>
+          <li>Complimentary posture assessment</li>
+          <li>Outdoor class</li>
+        </ul>
+        <!-- TODO: Replace 346XXXXXXXXX with Karin's real WhatsApp number (no + or spaces) -->
+        <a href="https://wa.me/346XXXXXXXXX?text=Hi%20Karin%2C%20I%27m%20interested%20in%20the%20Discovery%20class%20(%E2%82%AC10%2Fsession)." class="btn-pill pricing-btn" target="_blank" rel="noopener noreferrer">Choose</a>
+      </article>
+      <article class="pricing-card reveal reveal-d2">
+        <h3>Private Class</h3>
+        <p class="pricing-tag">Outdoor classes or at your home.</p>
+        <div class="pricing-price">
+          <span class="price-amount">€25</span>
+          <span class="price-unit">/ session</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Mat with or without props</li>
+          <li>Personalised guidance</li>
+          <li>Pack of 10 available</li>
+          <li>Hands-on adjustments</li>
+        </ul>
+        <!-- TODO: Replace 346XXXXXXXXX with Karin's real WhatsApp number (no + or spaces) -->
+        <a href="https://wa.me/346XXXXXXXXX?text=Hi%20Karin%2C%20I%27m%20interested%20in%20a%20private%20class%20(%E2%82%AC25%2Fsession)." class="btn-pill pricing-btn" target="_blank" rel="noopener noreferrer">Choose</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══════════ PRICING (FR) ═══════════ -->
+  <section class="pricing-section bio-fr" translate="no">
+    <div class="pricing-section-title reveal">
+      <h2>Cours &amp; Tarifs</h2>
+      <p>Choisissez la formule qui vous convient.</p>
+    </div>
+    <div class="pricing-cards">
+      <article class="pricing-card reveal reveal-d1">
+        <h3>Découverte</h3>
+        <p class="pricing-tag">Idéal pour votre première immersion.</p>
+        <div class="pricing-price">
+          <span class="price-amount">10€</span>
+          <span class="price-unit">/ séance</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Cours collectif 55min</li>
+          <li>Bilan postural offert</li>
+          <li>Cours en plein air</li>
+        </ul>
+        <!-- TODO: Replace 346XXXXXXXXX with Karin's real WhatsApp number (no + or spaces) -->
+        <a href="https://wa.me/346XXXXXXXXX?text=Bonjour%20Karin%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20cours%20D%C3%A9couverte%20(10%E2%82%AC%2Fs%C3%A9ance)." class="btn-pill pricing-btn" target="_blank" rel="noopener noreferrer">Sélectionner</a>
+      </article>
+      <article class="pricing-card reveal reveal-d2">
+        <h3>Cours Privé</h3>
+        <p class="pricing-tag">Cours en plein air ou à votre domicile.</p>
+        <div class="pricing-price">
+          <span class="price-amount">25€</span>
+          <span class="price-unit">/ séance</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Mat avec ou sans petit matériel</li>
+          <li>Accompagnement personnalisé</li>
+          <li>Pack 10 disponible</li>
+          <li>Correction tactile</li>
+        </ul>
+        <!-- TODO: Replace 346XXXXXXXXX with Karin's real WhatsApp number (no + or spaces) -->
+        <a href="https://wa.me/346XXXXXXXXX?text=Bonjour%20Karin%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20un%20cours%20priv%C3%A9%20(25%E2%82%AC%2Fs%C3%A9ance)." class="btn-pill pricing-btn" target="_blank" rel="noopener noreferrer">Sélectionner</a>
+      </article>
+    </div>
+  </section>
+
   <!-- ═══════════ GALLERY + CTA ═══════════ -->
   <section id="classes" class="gallery-cta">
     <div class="gallery-cta-grid">
@@ -623,7 +944,24 @@
       </div>
       <div class="cta-text reveal reveal-d1">
         <h2>Move with more strength, balance, and control.</h2>
-        <p>Whether you're new to Pilates or a dedicated practitioner, Karin's classes offer a focused, personal experience in beautiful settings across Valencia.</p>
+        <div class="cta-bio" translate="no">
+          <div class="bio-en">
+            <p>Originally from Sweden, I've always been passionate about movement and wellbeing. It's this passion that naturally led me to Pilates — a method that strengthens the body from deep within while improving posture, breath, and balance.</p>
+            <p>Today, I share this practice through sessions open to everyone, in a caring and encouraging atmosphere.</p>
+            <p>My classes take place outdoors, under the Valencia sun, so you can draw on the energy of nature while caring for both body and mind.</p>
+            <p>I teach classical mat Pilates, inspired by the traditional method with its emphasis on posture, breath, and deep-core strengthening. The practice improves flexibility, balance, and tone while working the body gently.</p>
+            <p>Sessions are held outdoors, under the Valencia sun, in a relaxed and welcoming setting. Practising outside lets you breathe fully, reconnect with the body, and enjoy a moment of wellbeing in nature.</p>
+            <p>Classes are suited to all levels, whether you're a complete beginner or already familiar with Pilates.</p>
+          </div>
+          <div class="bio-fr">
+            <p>Originaire de Suède, j'ai toujours été passionnée par le mouvement et le bien-être. C'est cette passion qui m'a naturellement menée vers le Pilates, une méthode qui permet de renforcer le corps en profondeur tout en améliorant la posture, la respiration et l'équilibre.</p>
+            <p>Aujourd'hui, je partage cette pratique à travers des séances accessibles à tous, dans une atmosphère bienveillante et motivante.</p>
+            <p>Mes cours se déroulent en plein air, sous le soleil de Valencia, pour profiter de l'énergie de la nature tout en prenant soin de son corps et de son esprit.</p>
+            <p>Je propose des cours de Pilates classique sur tapis, inspirés de la méthode traditionnelle qui met l'accent sur la posture, la respiration et le renforcement des muscles profonds. Cette pratique permet d'améliorer la souplesse, l'équilibre et la tonicité du corps tout en travaillant en douceur.</p>
+            <p>Les séances se déroulent en plein air, sous le soleil de Valencia, dans un cadre agréable et détendu. Pratiquer à l'extérieur permet de respirer pleinement, de se reconnecter à son corps et de profiter d'un moment de bien-être dans la nature.</p>
+            <p>Les cours sont adaptés à tous les niveaux, que vous soyez débutant ou déjà familier avec le Pilates.</p>
+          </div>
+        </div>
         <a href="#contact" class="btn-pill">Book a Class</a>
       </div>
     </div>
@@ -633,7 +971,7 @@
   <section class="instagram-section">
     <div class="reveal">
       <p class="label">Follow Along</p>
-      <a href="https://www.instagram.com/karin_pilatesbodycontrol" target="_blank" rel="noopener noreferrer" class="handle">@karin_pilatesbodycontrol</a>
+      <a href="https://www.instagram.com/karin_pilatesbodycontrol" target="_blank" rel="noopener noreferrer" class="handle" translate="no">@karin_pilatesbodycontrol</a>
     </div>
     <div class="reveal reveal-d1">
       <div class="insta-grid">
@@ -649,7 +987,7 @@
   <footer id="contact" class="site-footer">
     <div class="footer-grid">
       <div>
-        <span class="footer-brand">Karin Pilates Body Control</span>
+        <span class="footer-brand" translate="no">Karin Pilates Body Control</span>
         <p>Classical Pilates instruction<br>in Valencia, Spain.</p>
       </div>
       <div class="footer-links">
@@ -700,6 +1038,68 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
+  <!-- ═══════════ GOOGLE TRANSLATE (EN / FR) ═══════════ -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    // Initialize the hidden Google Translate widget
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr',
+        autoDisplay: false,
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+
+    // Read current language from the googtrans cookie (format: /en/fr or /en/en)
+    function getCurrentLang() {
+      const m = document.cookie.match(/googtrans=\/en\/(\w+)/);
+      return m ? m[1] : 'en';
+    }
+
+    // Set cookie + reload so Google Translate re-renders the whole page reliably
+    function setLanguage(lang) {
+      // Update active state immediately (for the brief moment before reload)
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      const value = '/en/' + lang;
+      const host = location.hostname;
+
+      // Clear any existing cookies across path/domain variants
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + host + ';';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.' + host + ';';
+
+      // Set new cookie (skip if switching back to English — no cookie = original)
+      if (lang !== 'en') {
+        document.cookie = 'googtrans=' + value + '; path=/;';
+        if (host) {
+          document.cookie = 'googtrans=' + value + '; path=/; domain=' + host + ';';
+          document.cookie = 'googtrans=' + value + '; path=/; domain=.' + host + ';';
+        }
+      }
+
+      // Reload to apply
+      location.reload();
+    }
+
+    // Wire up all language buttons (desktop + mobile)
+    document.addEventListener('DOMContentLoaded', function () {
+      const current = getCurrentLang();
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === current);
+        btn.addEventListener('click', function () {
+          if (btn.dataset.lang !== getCurrentLang()) {
+            setLanguage(btn.dataset.lang);
+          }
+        });
+      });
+    });
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
