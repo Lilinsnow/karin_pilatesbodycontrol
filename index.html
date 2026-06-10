@@ -410,11 +410,43 @@
     }
     .pricing-price {
       display: flex;
-      align-items: baseline;
-      gap: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
       margin-bottom: 30px;
       padding-bottom: 22px;
       border-bottom: 1px solid rgba(217, 207, 196, 0.5);
+    }
+    .price-from {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 10.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--taupe);
+      font-weight: 500;
+    }
+    .price-amount-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .price-asterisk {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--taupe);
+      margin-left: 2px;
+      vertical-align: top;
+    }
+    .pricing-disclaimer {
+      max-width: 920px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--taupe);
+      font-weight: 300;
+      line-height: 1.5;
     }
     .price-amount {
       font-family: 'Playfair Display', serif;
@@ -578,6 +610,16 @@
       margin-bottom: 14px;
     }
     .footer-links p, .footer-grid > div p { margin-bottom: 6px; }
+    .footer-grid a {
+      color: inherit;
+      transition: color 0.3s;
+    }
+    .footer-grid a:hover {
+      color: var(--warm-white);
+    }
+    .footer-heading a {
+      color: inherit;
+    }
     .footer-social {
       display: flex;
       flex-direction: column;
@@ -601,6 +643,17 @@
       gap: 12px;
     }
     .footer-bottom p { font-size: 11px; color: var(--taupe); letter-spacing: 0.5px; }
+    .photo-credit a {
+      color: var(--sand);
+      text-decoration: underline;
+      text-decoration-color: rgba(217, 207, 196, 0.4);
+      text-underline-offset: 3px;
+      transition: color 0.3s, text-decoration-color 0.3s;
+    }
+    .photo-credit a:hover {
+      color: var(--warm-white);
+      text-decoration-color: var(--warm-white);
+    }
 
     /* Footer logo — high-res inside white circle */
     .footer-logo {
@@ -800,7 +853,7 @@
 
           <!-- EN bio -->
           <div class="lang-en">
-            <p>Hello! I'm Karin, a classical Pilates instructor. After years of practice and study, I've made it my mission to share the transformative power of Pilates — combining precision, breath, and intention to help people move with strength and grace.</p>
+            <p>Born in Sweden, trilingual, and shaped by over thirty years in Paris, I trained and certified as a Pilates Matwork coach in the French capital. Today I'm based in Valencia, Spain, where I share my passion for movement, well-being, and mindful living. My international background lets me connect naturally with people from different cultures and create a warm, welcoming space for every client.</p>
             <p>Pilates, to me, is more than exercise. It's a conversation between body and mind. Each session is an invitation to listen, to align, and to discover what your body is capable of when you move with attention.</p>
             <p>I teach small group classes and private sessions, both in the studio and outdoors — at the beach, in the park, or at your home. Whether you're new to Pilates or returning after time away, the work meets you where you are.</p>
             <p>My approach blends classical Pilates with mindful movement. Expect to leave each session feeling taller, more balanced, and quietly stronger — in body and in mind.</p>
@@ -808,7 +861,7 @@
 
           <!-- FR bio -->
           <div class="lang-fr">
-            <p>Bonjour ! Je suis Karin, professeure de Pilates classique. Après des années de pratique et d'étude, je me suis donné pour mission de partager le pouvoir transformateur du Pilates — alliant précision, respiration et intention pour aider chacun à se mouvoir avec force et grâce.</p>
+            <p>Née en Suède, trilingue, et façonnée par plus de trente ans à Paris, j'y ai été formée et certifiée comme coach de Pilates Matwork. Aujourd'hui installée à Valence, en Espagne, je partage ma passion pour le mouvement, le bien-être et l'art de vivre en pleine conscience. Mon parcours international me permet de connecter naturellement avec des personnes de différentes cultures et de créer un espace chaleureux et accueillant pour chaque client.</p>
             <p>Le Pilates, pour moi, c'est plus qu'un exercice. C'est une conversation entre le corps et l'esprit. Chaque séance est une invitation à écouter, à s'aligner, et à découvrir ce dont votre corps est capable lorsque vous bougez avec attention.</p>
             <p>J'enseigne des cours en petit groupe et des sessions privées, en studio comme en plein air — à la plage, au parc, ou chez vous. Que vous soyez débutant(e) ou que vous repreniez après une pause, la pratique vous rencontre où vous êtes.</p>
             <p>Mon approche allie le Pilates classique au mouvement conscient. Attendez-vous à quitter chaque séance plus grand(e), plus équilibré(e), et discrètement plus fort(e) — dans le corps comme dans l'esprit.</p>
@@ -824,7 +877,7 @@
       </div>
 
       <!-- Classes -->
-      <div class="classes-heading reveal">
+      <div id="classes" class="classes-heading reveal">
         <h2>
           <span class="lang-en">Classes</span>
           <span class="lang-fr">Cours</span>
@@ -910,8 +963,14 @@
           <span class="lang-fr">Idéal pour votre première immersion.</span>
         </p>
         <div class="pricing-price">
-          <span class="price-amount">10€</span>
-          <span class="price-unit"><span class="lang-en">/ session</span><span class="lang-fr">/ séance</span></span>
+          <span class="price-from">
+            <span class="lang-en">Starting at</span>
+            <span class="lang-fr">À partir de</span>
+          </span>
+          <div class="price-amount-row">
+            <span class="price-amount">10€<span class="price-asterisk">*</span></span>
+            <span class="price-unit"><span class="lang-en">/ session</span><span class="lang-fr">/ séance</span></span>
+          </div>
         </div>
         <ul class="pricing-features">
           <li><span class="lang-en">Complimentary posture assessment</span><span class="lang-fr">Bilan postural offert</span></li>
@@ -933,8 +992,14 @@
           <span class="lang-fr">Cours en plein air ou à votre domicile.</span>
         </p>
         <div class="pricing-price">
-          <span class="price-amount">25€</span>
-          <span class="price-unit"><span class="lang-en">/ session</span><span class="lang-fr">/ séance</span></span>
+          <span class="price-from">
+            <span class="lang-en">Starting at</span>
+            <span class="lang-fr">À partir de</span>
+          </span>
+          <div class="price-amount-row">
+            <span class="price-amount">25€<span class="price-asterisk">*</span></span>
+            <span class="price-unit"><span class="lang-en">/ session</span><span class="lang-fr">/ séance</span></span>
+          </div>
         </div>
         <ul class="pricing-features">
           <li><span class="lang-en">Personalized program</span><span class="lang-fr">Programme personnalisé</span></li>
@@ -947,6 +1012,10 @@
         <a href="https://www.instagram.com/kbodycontrolpilates/" class="btn-pill pricing-btn lang-fr" target="_blank" rel="noopener noreferrer">Sélectionner</a>
       </article>
     </div>
+    <p class="pricing-disclaimer">
+      <span class="lang-en">* Prices are subject to change depending on the session requested. Contact us for more details.</span>
+      <span class="lang-fr">* Les prix peuvent varier selon la séance demandée. Contactez-nous pour plus de détails.</span>
+    </p>
   </section>
 
   <!-- ═══════════ GALLERY-CTA (Move with more strength) ═══════════ -->
@@ -1009,7 +1078,7 @@
   <footer id="contact" class="site-footer">
     <div class="footer-grid">
       <div>
-        <span class="footer-brand">Karin Pilates Body Control</span>
+        <span class="footer-brand">K Body Control Pilates</span>
         <p>
           <span class="lang-en">Classical Pilates instruction<br>by Karin.</span>
           <span class="lang-fr">Pilates classique<br>avec Karin.</span>
@@ -1020,37 +1089,38 @@
           <span class="lang-en">Navigate</span>
           <span class="lang-fr">Navigation</span>
         </h4>
-        <p><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></p>
-        <p><span class="lang-en">About Karin</span><span class="lang-fr">À Propos</span></p>
-        <p><span class="lang-en">Classes</span><span class="lang-fr">Cours</span></p>
-        <p>Contact</p>
+        <p><a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a></p>
+        <p><a href="#about"><span class="lang-en">About Karin</span><span class="lang-fr">À Propos</span></a></p>
+        <p><a href="#classes"><span class="lang-en">Classes</span><span class="lang-fr">Cours</span></a></p>
+        <p><a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">Contact</a></p>
       </div>
       <div>
         <h4 class="footer-heading">
-          <span class="lang-en">Sessions</span>
-          <span class="lang-fr">Sessions</span>
+          <a href="#pricing"><span class="lang-en">Sessions</span><span class="lang-fr">Sessions</span></a>
         </h4>
-        <p><span class="lang-en">Mat Pilates</span><span class="lang-fr">Pilates au Mat</span></p>
-        <p><span class="lang-en">Private One-on-One</span><span class="lang-fr">Sessions Privées</span></p>
-        <p><span class="lang-en">Home Sessions</span><span class="lang-fr">Sessions à Domicile</span></p>
-        <p><span class="lang-en">Beach &amp; Park Classes</span><span class="lang-fr">Cours Plage &amp; Parc</span></p>
+        <p><a href="#classes"><span class="lang-en">Mat Pilates</span><span class="lang-fr">Pilates au Mat</span></a></p>
+        <p><a href="#classes"><span class="lang-en">Private One-on-One</span><span class="lang-fr">Sessions Privées</span></a></p>
+        <p><a href="#classes"><span class="lang-en">Home Sessions</span><span class="lang-fr">Sessions à Domicile</span></a></p>
+        <p><a href="#classes"><span class="lang-en">Beach &amp; Park Classes</span><span class="lang-fr">Cours Plage &amp; Parc</span></a></p>
       </div>
       <div>
         <h4 class="footer-heading">
           <span class="lang-en">Get in Touch</span>
           <span class="lang-fr">Me Contacter</span>
         </h4>
-        <p style="margin-bottom: 14px;">
-          <span class="lang-en">Spain</span>
-          <span class="lang-fr">Espagne</span>
-        </p>
         <div class="footer-social">
           <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Karin Pilates Body Control. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+      <p>&copy; 2026 K Body Control Pilates. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+      <p class="photo-credit">
+        <span class="lang-en">Photos by </span><span class="lang-fr">Photos de </span><a href="https://www.instagram.com/petrakallsback_studio/" target="_blank" rel="noopener noreferrer">petrakallsback_studio</a>
+      </p>
+      <p class="photo-credit">
+        <span class="lang-en">Website by </span><span class="lang-fr">Site web par </span><a href="https://bluedotmedia.net/" target="_blank" rel="noopener noreferrer">Lilieth</a>
+      </p>
       <p>
         <span class="lang-en">Privacy Policy &middot; Terms</span>
         <span class="lang-fr">Politique de Confidentialité &middot; Conditions</span>
