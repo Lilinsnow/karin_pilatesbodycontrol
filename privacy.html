@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy · K Body Control Pilates</title>
+  <meta name="description" content="Privacy policy for K Body Control Pilates website." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --soft-brown: #5A4C44;
+      --taupe: #8C7D72;
+      --sand: #D9CFC4;
+      --cream: #EDE8E3;
+      --warm-white: #F6F3F1;
+      --btn-bg: #8C7D72;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Albert Sans', sans-serif;
+      font-weight: 300;
+      color: var(--soft-brown);
+      background: var(--warm-white);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    body.lang-en .lang-fr { display: none !important; }
+    body.lang-fr .lang-en { display: none !important; }
+
+    /* Header */
+    .site-header {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--sand);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo img { height: 90px; width: auto; }
+    .header-right { display: flex; align-items: center; gap: 24px; }
+    .back-link {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: var(--soft-brown);
+      transition: color 0.3s;
+    }
+    .back-link:hover { color: var(--taupe); }
+    .lang-toggle { display: flex; align-items: center; gap: 6px; }
+    .lang-btn {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1.4px;
+      color: var(--taupe);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      transition: color 0.3s;
+    }
+    .lang-btn:hover { color: var(--soft-brown); }
+    .lang-btn.active { color: var(--soft-brown); font-weight: 600; }
+    .lang-sep { color: var(--sand); font-size: 11px; line-height: 1; }
+
+    /* Main policy content */
+    .policy {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 80px;
+    }
+    .policy-header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--sand);
+    }
+    .policy-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+    .policy-header .updated {
+      font-size: 12.5px;
+      color: var(--taupe);
+      letter-spacing: 0.5px;
+    }
+    .policy h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      margin-top: 40px;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .policy h2:first-of-type { margin-top: 0; }
+    .policy h3 {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--soft-brown);
+      letter-spacing: 0.4px;
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+    .policy p { margin-bottom: 14px; }
+    .policy ul {
+      margin: 8px 0 16px 0;
+      padding-left: 22px;
+    }
+    .policy li { margin-bottom: 7px; line-height: 1.6; }
+    .policy a:not(.back-link):not(.lang-btn) {
+      color: var(--soft-brown);
+      text-decoration: underline;
+      text-decoration-color: rgba(140, 125, 114, 0.4);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.3s;
+    }
+    .policy a:not(.back-link):not(.lang-btn):hover {
+      text-decoration-color: var(--soft-brown);
+    }
+    .intro {
+      background: var(--cream);
+      padding: 20px 24px;
+      border-radius: 6px;
+      margin-bottom: 32px;
+      font-size: 14.5px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--soft-brown);
+      padding: 36px 32px 32px;
+      color: var(--sand);
+      text-align: center;
+    }
+    .site-footer p { font-size: 12.5px; line-height: 1.7; margin-bottom: 6px; }
+    .site-footer a {
+      color: var(--sand);
+      transition: color 0.3s;
+    }
+    .site-footer a:hover { color: var(--warm-white); }
+
+    /* Mobile */
+    @media (max-width: 880px) {
+      .header-inner { padding: 10px 20px; }
+      .logo img { height: 70px; }
+      .header-right { gap: 14px; }
+      .back-link { font-size: 12px; }
+      .policy { padding: 40px 20px 56px; }
+      .policy-header h1 { font-size: 30px; }
+      .policy h2 { font-size: 20px; }
+      body { font-size: 14.5px; }
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="K Body Control Pilates" />
+      </a>
+      <div class="header-right">
+        <a href="index.html" class="back-link">
+          <span class="lang-en">← Back to site</span>
+          <span class="lang-fr">← Retour au site</span>
+        </a>
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- POLICY -->
+  <main class="policy">
+
+    <div class="policy-header">
+      <h1>
+        <span class="lang-en">Privacy Policy</span>
+        <span class="lang-fr">Politique de Confidentialité</span>
+      </h1>
+      <p class="updated">
+        <span class="lang-en">Last updated: 10 June 2026</span>
+        <span class="lang-fr">Dernière mise à jour : 10 juin 2026</span>
+      </p>
+    </div>
+
+    <!-- ═══════ EN VERSION ═══════ -->
+    <div class="lang-en">
+
+      <div class="intro">
+        This privacy policy explains how K Body Control Pilates ("we", "us", "our") handles personal data when you visit this website. It applies to visitors located in the European Union — including France, Sweden, and Spain — and complies with the General Data Protection Regulation (GDPR, Regulation (EU) 2016/679).
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>K Body Control Pilates is a Pilates instruction practice operated by Karin Mazuir, based in Valencia, Spain. We are the "data controller" responsible for the personal data processed through this website.</p>
+      <p><strong>How to reach us about privacy questions:</strong></p>
+      <ul>
+        <li>Instagram: <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a></li>
+      </ul>
+
+      <h2>2. What we collect (and what we don't)</h2>
+      <p>This website is intentionally minimal. We do not run contact forms, accounts, or newsletters here — all inquiries happen on Instagram, where Meta's own privacy terms apply.</p>
+      <h3>Data automatically processed when you visit</h3>
+      <ul>
+        <li><strong>Server logs from our hosting provider</strong> (GitHub Pages): IP address, browser type, device type, time of visit, pages viewed. Used for technical operation and security.</li>
+        <li><strong>Language preference</strong>: stored in your browser's local storage so the site remembers if you chose EN or FR. This is technical data only — no name or contact information is involved.</li>
+      </ul>
+      <h3>What we do NOT collect</h3>
+      <ul>
+        <li>We do not run analytics (no Google Analytics, no Meta Pixel, no Plausible, etc.).</li>
+        <li>We do not place advertising cookies.</li>
+        <li>We do not maintain a customer database on this site.</li>
+        <li>We do not send marketing emails from this site.</li>
+      </ul>
+
+      <h2>3. Third-party services on this site</h2>
+      <p>Three third-party services run when you load this page. Each has its own privacy policy.</p>
+      <ul>
+        <li><strong>GitHub Pages</strong> (hosting). May log IP addresses and request metadata for technical operation. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
+        <li><strong>Google Fonts</strong> (typography). When fonts load, your browser connects to Google's servers, which may log your IP address. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        <li><strong>Behold.so</strong> (Instagram feed widget). Loads our recent Instagram posts. Your browser connects to Behold's servers for this. <a href="https://behold.so/privacy/" target="_blank" rel="noopener noreferrer">Behold Privacy Policy</a></li>
+      </ul>
+      <p>When you click any button that opens Instagram (booking buttons, contact links, the @ handle), you leave our site. From that point, <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer">Instagram's privacy policy</a> applies.</p>
+
+      <h2>4. Legal basis for processing</h2>
+      <p>Under Article 6 of the GDPR, the data we process is justified by:</p>
+      <ul>
+        <li><strong>Legitimate interest</strong> (Article 6(1)(f)): basic website operation, security, and protection against abuse.</li>
+        <li><strong>Consent</strong> (Article 6(1)(a)): where applicable, when you choose to interact with third-party widgets.</li>
+      </ul>
+
+      <h2>5. Your rights under the GDPR</h2>
+      <p>You have the following rights regarding personal data we hold about you:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of any personal data we hold</li>
+        <li><strong>Rectification</strong> — correct inaccurate data</li>
+        <li><strong>Erasure</strong> ("right to be forgotten") — request deletion of your data</li>
+        <li><strong>Restriction</strong> — limit how we process your data</li>
+        <li><strong>Objection</strong> — object to specific processing</li>
+        <li><strong>Data portability</strong> — receive your data in a portable format</li>
+        <li><strong>Withdraw consent</strong> — at any time, where consent is the legal basis</li>
+      </ul>
+      <p>To exercise any of these, contact us via Instagram. We will respond within one month, as required by Article 12(3) of the GDPR.</p>
+
+      <h2>6. Right to lodge a complaint</h2>
+      <p>You have the right to file a complaint with the data protection authority in your country:</p>
+      <ul>
+        <li><strong>France:</strong> Commission Nationale de l'Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr/" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></li>
+        <li><strong>Sweden:</strong> Integritetsskyddsmyndigheten (IMY) — <a href="https://www.imy.se/" target="_blank" rel="noopener noreferrer">www.imy.se</a></li>
+        <li><strong>Spain:</strong> Agencia Española de Protección de Datos (AEPD) — <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">www.aepd.es</a></li>
+      </ul>
+
+      <h2>7. Data retention</h2>
+      <p>We do not maintain our own database of visitor data. Third-party providers (GitHub, Google, Behold) retain server logs according to their respective retention policies — typically between 30 days and 24 months.</p>
+
+      <h2>8. International data transfers</h2>
+      <p>Some third-party services may transfer data outside the European Economic Area (for example, GitHub and Google operate globally). These providers use Standard Contractual Clauses or other EU-approved mechanisms to ensure equivalent protection.</p>
+
+      <h2>9. Cookies</h2>
+      <p>This site does not place its own analytics or advertising cookies. We use only your browser's local storage to remember your language preference, which is not considered a tracking cookie under the ePrivacy Directive.</p>
+      <p>Third-party widgets (such as Behold) may set their own cookies. Please refer to their privacy policies linked above for details.</p>
+
+      <h2>10. Children's privacy</h2>
+      <p>This site is not directed at children under 16. We do not knowingly process the personal data of children. If you believe a child has provided personal data, please contact us and we will take appropriate action.</p>
+
+      <h2>11. Changes to this policy</h2>
+      <p>We may update this policy from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted on the site when made.</p>
+
+    </div>
+
+    <!-- ═══════ FR VERSION ═══════ -->
+    <div class="lang-fr">
+
+      <div class="intro">
+        Cette politique de confidentialité explique comment K Body Control Pilates (« nous », « notre ») traite les données personnelles lorsque vous visitez ce site web. Elle s'applique aux visiteurs situés dans l'Union européenne — notamment en France, en Suède et en Espagne — et respecte le Règlement Général sur la Protection des Données (RGPD, Règlement (UE) 2016/679).
+      </div>
+
+      <h2>1. Qui sommes-nous</h2>
+      <p>K Body Control Pilates est une activité d'enseignement du Pilates dirigée par Karin Mazuir, basée à Valence, en Espagne. Nous sommes le « responsable du traitement » des données personnelles collectées par ce site.</p>
+      <p><strong>Comment nous contacter pour toute question de confidentialité :</strong></p>
+      <ul>
+        <li>Instagram : <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a></li>
+      </ul>
+
+      <h2>2. Ce que nous collectons (et ce que nous ne collectons pas)</h2>
+      <p>Ce site est volontairement minimaliste. Nous n'utilisons pas de formulaire de contact, de comptes utilisateurs, ni de newsletter ici — toutes les demandes passent par Instagram, où s'appliquent les conditions de confidentialité de Meta.</p>
+      <h3>Données traitées automatiquement lors de votre visite</h3>
+      <ul>
+        <li><strong>Journaux du serveur de notre hébergeur</strong> (GitHub Pages) : adresse IP, type de navigateur, type d'appareil, heure de visite, pages consultées. Utilisés pour le fonctionnement technique et la sécurité.</li>
+        <li><strong>Préférence de langue</strong> : stockée dans le stockage local de votre navigateur pour que le site retienne votre choix (EN ou FR). Il s'agit de données techniques uniquement — aucune information personnelle n'est concernée.</li>
+      </ul>
+      <h3>Ce que nous NE collectons PAS</h3>
+      <ul>
+        <li>Nous n'utilisons aucun outil d'analyse (pas de Google Analytics, Meta Pixel, Plausible, etc.).</li>
+        <li>Nous ne plaçons pas de cookies publicitaires.</li>
+        <li>Nous ne tenons pas de base de données clients sur ce site.</li>
+        <li>Nous n'envoyons aucun e-mail marketing depuis ce site.</li>
+      </ul>
+
+      <h2>3. Services tiers utilisés sur ce site</h2>
+      <p>Trois services tiers sont chargés lors de votre visite. Chacun dispose de sa propre politique de confidentialité.</p>
+      <ul>
+        <li><strong>GitHub Pages</strong> (hébergement). Peut journaliser les adresses IP et les métadonnées de requête pour le fonctionnement technique. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Politique de confidentialité GitHub</a></li>
+        <li><strong>Google Fonts</strong> (typographie). Lors du chargement des polices, votre navigateur se connecte aux serveurs de Google, qui peuvent journaliser votre adresse IP. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Politique de confidentialité Google</a></li>
+        <li><strong>Behold.so</strong> (widget de flux Instagram). Charge nos publications Instagram récentes. Votre navigateur se connecte aux serveurs de Behold à cette fin. <a href="https://behold.so/privacy/" target="_blank" rel="noopener noreferrer">Politique de confidentialité Behold</a></li>
+      </ul>
+      <p>Lorsque vous cliquez sur un bouton qui ouvre Instagram (réservation, contact, le pseudo @), vous quittez notre site. À partir de ce moment, c'est la <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer">politique de confidentialité d'Instagram</a> qui s'applique.</p>
+
+      <h2>4. Base légale du traitement</h2>
+      <p>En vertu de l'article 6 du RGPD, les données que nous traitons sont justifiées par :</p>
+      <ul>
+        <li><strong>Intérêt légitime</strong> (article 6, paragraphe 1, point f) : fonctionnement technique du site, sécurité et prévention des abus.</li>
+        <li><strong>Consentement</strong> (article 6, paragraphe 1, point a) : le cas échéant, lorsque vous interagissez avec des widgets tiers.</li>
+      </ul>
+
+      <h2>5. Vos droits sous le RGPD</h2>
+      <p>Vous disposez des droits suivants concernant les données personnelles vous concernant :</p>
+      <ul>
+        <li><strong>Accès</strong> — demander une copie des données personnelles que nous détenons</li>
+        <li><strong>Rectification</strong> — corriger des données inexactes</li>
+        <li><strong>Effacement</strong> (« droit à l'oubli ») — demander la suppression de vos données</li>
+        <li><strong>Limitation</strong> — limiter le traitement de vos données</li>
+        <li><strong>Opposition</strong> — vous opposer à un traitement spécifique</li>
+        <li><strong>Portabilité</strong> — recevoir vos données dans un format portable</li>
+        <li><strong>Retrait du consentement</strong> — à tout moment, lorsque le consentement est la base légale</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous via Instagram. Nous répondrons dans un délai d'un mois, conformément à l'article 12, paragraphe 3, du RGPD.</p>
+
+      <h2>6. Droit de réclamation</h2>
+      <p>Vous avez le droit de déposer une réclamation auprès de l'autorité de protection des données de votre pays :</p>
+      <ul>
+        <li><strong>France :</strong> Commission Nationale de l'Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr/" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></li>
+        <li><strong>Suède :</strong> Integritetsskyddsmyndigheten (IMY) — <a href="https://www.imy.se/" target="_blank" rel="noopener noreferrer">www.imy.se</a></li>
+        <li><strong>Espagne :</strong> Agencia Española de Protección de Datos (AEPD) — <a href="https://www.aepd.es/" target="_blank" rel="noopener noreferrer">www.aepd.es</a></li>
+      </ul>
+
+      <h2>7. Durée de conservation</h2>
+      <p>Nous ne maintenons aucune base de données propre concernant les visiteurs. Les prestataires tiers (GitHub, Google, Behold) conservent leurs journaux de serveur conformément à leurs propres politiques de conservation — généralement entre 30 jours et 24 mois.</p>
+
+      <h2>8. Transferts internationaux de données</h2>
+      <p>Certains services tiers peuvent transférer des données en dehors de l'Espace économique européen (par exemple, GitHub et Google opèrent à l'échelle mondiale). Ces prestataires utilisent des Clauses Contractuelles Types ou d'autres mécanismes approuvés par l'UE pour garantir une protection équivalente.</p>
+
+      <h2>9. Cookies</h2>
+      <p>Ce site ne place ni cookies d'analyse, ni cookies publicitaires. Nous utilisons uniquement le stockage local de votre navigateur pour mémoriser votre préférence de langue, ce qui n'est pas considéré comme un cookie de suivi en vertu de la Directive ePrivacy.</p>
+      <p>Les widgets tiers (comme Behold) peuvent définir leurs propres cookies. Veuillez consulter leurs politiques de confidentialité citées ci-dessus pour plus de détails.</p>
+
+      <h2>10. Confidentialité des enfants</h2>
+      <p>Ce site n'est pas destiné aux enfants de moins de 16 ans. Nous ne traitons sciemment aucune donnée personnelle d'enfant. Si vous estimez qu'un enfant nous a fourni des données personnelles, veuillez nous contacter et nous prendrons les mesures appropriées.</p>
+
+      <h2>11. Modifications de cette politique</h2>
+      <p>Nous pouvons mettre à jour cette politique de temps à autre. La date « Dernière mise à jour » indiquée en haut reflète la dernière révision. Les changements importants seront signalés sur le site lors de leur publication.</p>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 K Body Control Pilates. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
+    <p><a href="index.html"><span class="lang-en">← Back to home</span><span class="lang-fr">← Retour à l'accueil</span></a></p>
+  </footer>
+
+  <script>
+    (function() {
+      const STORAGE_KEY = 'karin-pilates-lang';
+      const savedLang = localStorage.getItem(STORAGE_KEY) || 'en';
+      function setLang(lang) {
+        document.body.classList.remove('lang-en', 'lang-fr');
+        document.body.classList.add('lang-' + lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        localStorage.setItem(STORAGE_KEY, lang);
+      }
+      setLang(savedLang);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.lang));
+      });
+    })();
+  </script>
+</body>
+</html>

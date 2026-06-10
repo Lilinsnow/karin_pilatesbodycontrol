@@ -575,94 +575,23 @@
     /* ═══════════ FOOTER ═══════════ */
     .site-footer {
       background: var(--soft-brown);
-      padding: 52px 48px 36px;
+      padding: 48px 32px 28px;
       color: var(--sand);
-    }
-    .footer-grid {
-      max-width: 1200px;
-      margin: 0 auto 36px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 36px;
-    }
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--warm-white);
-      display: block;
-      margin-bottom: 10px;
+      text-align: center;
     }
     .site-footer p {
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.7;
       color: var(--sand);
       font-weight: 300;
     }
-    .footer-heading {
-      font-family: 'Albert Sans', sans-serif;
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: 2.4px;
-      text-transform: uppercase;
-      color: var(--warm-white);
-      margin-bottom: 14px;
-    }
-    .footer-links p, .footer-grid > div p { margin-bottom: 6px; }
-    .footer-grid a {
-      color: inherit;
-      transition: color 0.3s;
-    }
-    .footer-grid a:hover {
-      color: var(--warm-white);
-    }
-    .footer-heading a {
-      color: inherit;
-    }
-    .footer-social {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 6px;
-    }
-    .footer-social a {
-      font-size: 13.5px;
-      color: var(--sand);
-      transition: color 0.3s;
-    }
-    .footer-social a:hover { color: var(--warm-white); }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-top: 22px;
-      border-top: 1px solid rgba(217, 207, 196, 0.18);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-bottom p { font-size: 11px; color: var(--taupe); letter-spacing: 0.5px; }
-    .photo-credit a {
-      color: var(--sand);
-      text-decoration: underline;
-      text-decoration-color: rgba(217, 207, 196, 0.4);
-      text-underline-offset: 3px;
-      transition: color 0.3s, text-decoration-color 0.3s;
-    }
-    .photo-credit a:hover {
-      color: var(--warm-white);
-      text-decoration-color: var(--warm-white);
-    }
 
-    /* Footer logo — high-res inside white circle */
+    /* Footer logo — white circle, centered at top */
     .footer-logo {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 32px 0 12px;
-      margin-top: 28px;
-      border-top: 1px solid rgba(246, 243, 241, 0.12);
+      margin-bottom: 36px;
     }
     .footer-logo-circle {
       width: 170px;
@@ -681,6 +610,180 @@
       height: auto;
       display: block;
     }
+
+    /* Horizontal nav row */
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px 38px;
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      padding-bottom: 28px;
+    }
+    .footer-nav a {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      color: var(--sand);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    .footer-nav a:hover { color: var(--warm-white); }
+
+    /* Divider */
+    .footer-divider {
+      max-width: 1100px;
+      margin: 0 auto 22px;
+      border-top: 1px solid rgba(217, 207, 196, 0.16);
+    }
+
+    /* Bottom row: copyright + credits */
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-bottom p { font-size: 11.5px; color: var(--taupe); letter-spacing: 0.5px; }
+    .photo-credit a {
+      color: var(--sand);
+      text-decoration: underline;
+      text-decoration-color: rgba(217, 207, 196, 0.4);
+      text-underline-offset: 3px;
+      transition: color 0.3s, text-decoration-color 0.3s;
+    }
+    .photo-credit a:hover {
+      color: var(--warm-white);
+      text-decoration-color: var(--warm-white);
+    }
+
+    /* ═══════════ MODALS ═══════════ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 22, 18, 0.78);
+      z-index: 2000;
+      display: none;
+      overflow-y: auto;
+      padding: 40px 16px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+    .modal-content {
+      background: var(--warm-white);
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 4px;
+      padding: 52px 44px 44px;
+      position: relative;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.35);
+      text-align: left;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 30px;
+      color: var(--taupe);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 10px;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--soft-brown); }
+    .modal-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .modal-content .updated {
+      font-size: 11.5px;
+      color: var(--taupe);
+      letter-spacing: 0.5px;
+      margin-bottom: 26px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--sand);
+      text-transform: uppercase;
+    }
+    .modal-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--soft-brown);
+      margin-top: 26px;
+      margin-bottom: 10px;
+    }
+    .modal-content h3:first-of-type { margin-top: 0; }
+    .modal-content h4 {
+      font-family: 'Albert Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--soft-brown);
+      letter-spacing: 0.4px;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .modal-content p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--soft-brown);
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+    .modal-content ul {
+      margin: 6px 0 14px 0;
+      padding-left: 22px;
+    }
+    .modal-content li {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--soft-brown);
+      margin-bottom: 6px;
+      font-weight: 300;
+    }
+    .modal-content strong { font-weight: 600; color: var(--soft-brown); }
+    .modal-content a {
+      color: var(--soft-brown);
+      text-decoration: underline;
+      text-decoration-color: rgba(140, 125, 114, 0.45);
+    }
+    .modal-content .placeholder {
+      background: rgba(217, 207, 196, 0.55);
+      color: #8a6a4a;
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 12.5px;
+      font-style: italic;
+      font-weight: 500;
+    }
+    .modal-content .intro-box {
+      background: var(--cream);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin-bottom: 22px;
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .modal-content .intro-box p { margin-bottom: 0; font-size: 13.5px; }
+    body.modal-open { overflow: hidden; }
 
     /* ═══════════ RESPONSIVE ═══════════ */
     @media (max-width: 880px) {
@@ -758,13 +861,22 @@
 
       .instagram-section { padding: 40px 24px; }
 
-      .site-footer { padding: 40px 24px 28px; }
-      .footer-logo { padding: 26px 0 8px; }
+      .site-footer { padding: 38px 22px 24px; }
+      .footer-logo { margin-bottom: 28px; }
       .footer-logo-circle {
         width: 130px;
         height: 130px;
         padding: 18px;
       }
+      .footer-nav { gap: 16px 24px; font-size: 12px; padding-bottom: 22px; }
+      .footer-nav a { font-size: 12.5px; }
+
+      /* Modal mobile */
+      .modal-overlay { padding: 16px 8px; }
+      .modal-content { padding: 40px 22px 28px; }
+      .modal-content h2 { font-size: 23px; }
+      .modal-content h3 { font-size: 16px; }
+      .modal-content p, .modal-content li { font-size: 13.5px; }
     }
   </style>
 </head>
@@ -853,7 +965,7 @@
 
           <!-- EN bio -->
           <div class="lang-en">
-            <p>Born in Sweden, trilingual, and shaped by over thirty years in Paris, I trained and certified as a Pilates Matwork coach in the French capital. Today I'm based in Valencia, Spain, where I share my passion for movement, well-being, and mindful living. My international background lets me connect naturally with people from different cultures and create a warm, welcoming space for every client.</p>
+            <p>Born in Sweden, trilingual, and shaped by over thirty years in Paris, I trained and certified as a Pilates Matwork coach in Paris. Today I'm based in Valencia, Spain, where I share my passion for movement, well-being, and mindful living. My international background lets me connect naturally with people from different cultures and create a warm, welcoming space for every client.</p>
             <p>Pilates, to me, is more than exercise. It's a conversation between body and mind. Each session is an invitation to listen, to align, and to discover what your body is capable of when you move with attention.</p>
             <p>I teach small group classes and private sessions, both in the studio and outdoors — at the beach, in the park, or at your home. Whether you're new to Pilates or returning after time away, the work meets you where you are.</p>
             <p>My approach blends classical Pilates with mindful movement. Expect to leave each session feeling taller, more balanced, and quietly stronger — in body and in mind.</p>
@@ -1076,61 +1188,39 @@
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer id="contact" class="site-footer">
-    <div class="footer-grid">
-      <div>
-        <span class="footer-brand">K Body Control Pilates</span>
-        <p>
-          <span class="lang-en">Classical Pilates instruction<br>by Karin.</span>
-          <span class="lang-fr">Pilates classique<br>avec Karin.</span>
-        </p>
-      </div>
-      <div class="footer-links">
-        <h4 class="footer-heading">
-          <span class="lang-en">Navigate</span>
-          <span class="lang-fr">Navigation</span>
-        </h4>
-        <p><a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a></p>
-        <p><a href="#about"><span class="lang-en">About Karin</span><span class="lang-fr">À Propos</span></a></p>
-        <p><a href="#classes"><span class="lang-en">Classes</span><span class="lang-fr">Cours</span></a></p>
-        <p><a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">Contact</a></p>
-      </div>
-      <div>
-        <h4 class="footer-heading">
-          <a href="#pricing"><span class="lang-en">Sessions</span><span class="lang-fr">Sessions</span></a>
-        </h4>
-        <p><a href="#classes"><span class="lang-en">Mat Pilates</span><span class="lang-fr">Pilates au Mat</span></a></p>
-        <p><a href="#classes"><span class="lang-en">Private One-on-One</span><span class="lang-fr">Sessions Privées</span></a></p>
-        <p><a href="#classes"><span class="lang-en">Home Sessions</span><span class="lang-fr">Sessions à Domicile</span></a></p>
-        <p><a href="#classes"><span class="lang-en">Beach &amp; Park Classes</span><span class="lang-fr">Cours Plage &amp; Parc</span></a></p>
-      </div>
-      <div>
-        <h4 class="footer-heading">
-          <span class="lang-en">Get in Touch</span>
-          <span class="lang-fr">Me Contacter</span>
-        </h4>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
+
+    <!-- Logo centered at top -->
+    <div class="footer-logo">
+      <div class="footer-logo-circle">
+        <img src="images/logo.png" alt="K Body Control Pilates" />
       </div>
     </div>
+
+    <!-- Horizontal nav row -->
+    <nav class="footer-nav">
+      <a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+      <a href="#about"><span class="lang-en">About</span><span class="lang-fr">À Propos</span></a>
+      <a href="#classes"><span class="lang-en">Classes</span><span class="lang-fr">Cours</span></a>
+      <a href="#pricing"><span class="lang-en">Sessions</span><span class="lang-fr">Tarifs</span></a>
+      <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
+      <a href="#" data-modal="terms"><span class="lang-en">Terms &amp; Conditions</span><span class="lang-fr">Conditions Générales</span></a>
+      <a href="#" data-modal="legal"><span class="lang-en">Legal Notice</span><span class="lang-fr">Mentions Légales</span></a>
+      <a href="#" data-modal="data"><span class="lang-en">Data Protection</span><span class="lang-fr">Protection des Données</span></a>
+      <a href="#" data-modal="cookies"><span class="lang-en">Cookie Policy</span><span class="lang-fr">Politique de Cookies</span></a>
+    </nav>
+
+    <div class="footer-divider"></div>
+
+    <!-- Copyright + credits -->
     <div class="footer-bottom">
       <p>&copy; 2026 K Body Control Pilates. <span class="lang-en">All rights reserved.</span><span class="lang-fr">Tous droits réservés.</span></p>
       <p class="photo-credit">
         <span class="lang-en">Photos by </span><span class="lang-fr">Photos de </span><a href="https://www.instagram.com/petrakallsback_studio/" target="_blank" rel="noopener noreferrer">petrakallsback_studio</a>
-      </p>
-      <p class="photo-credit">
-        <span class="lang-en">Website by </span><span class="lang-fr">Site web par </span><a href="https://bluedotmedia.net/" target="_blank" rel="noopener noreferrer">Lilieth</a>
-      </p>
-      <p>
-        <span class="lang-en">Privacy Policy &middot; Terms</span>
-        <span class="lang-fr">Politique de Confidentialité &middot; Conditions</span>
+        &nbsp;·&nbsp;
+        <span class="lang-en">Website by </span><span class="lang-fr">Site web par </span><a href="https://bluedotmedia.net/" target="_blank" rel="noopener noreferrer">Bluedot Media</a>
       </p>
     </div>
-    <div class="footer-logo">
-      <div class="footer-logo-circle">
-        <img src="images/logo.png" alt="K Bodycontrol Pilates" />
-      </div>
-    </div>
+
   </footer>
 
   <!-- ═══════════ SCRIPTS ═══════════ -->
@@ -1164,6 +1254,349 @@
       // Wire up all language buttons (desktop + mobile)
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => setLang(btn.dataset.lang));
+      });
+    })();
+  </script>
+
+  <!-- ═══════════ MODALS — LEGAL DOCUMENTS ═══════════ -->
+
+  <!-- TERMS & CONDITIONS -->
+  <div class="modal-overlay" id="modal-terms" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2>Terms &amp; Conditions of Sale</h2>
+      <p class="updated">Last updated: 10 June 2026</p>
+
+      <div class="intro-box">
+        <p>These General Terms &amp; Conditions (the "Terms") govern the Pilates instruction services ("Sessions") provided by <strong>K Body Control Pilates</strong>, operated by Karin Mazuir, based in Valencia, Spain ("we", "us", "our"). By booking a Session, you ("the Student") accept these Terms in full. If the Student is a minor, these Terms must be accepted by their parent or legal guardian.</p>
+      </div>
+
+      <h3>Article 1 — Services Offered</h3>
+      <p>1.1 K Body Control Pilates offers in-person Pilates instruction in Valencia, Spain, in the following formats:</p>
+      <ul>
+        <li>Private one-on-one sessions</li>
+        <li>Small group mat Pilates classes</li>
+        <li>Outdoor sessions (beach or park)</li>
+        <li>Home sessions at the Student's location</li>
+      </ul>
+      <p>1.2 Discovery sessions are available for new Students to assess fit and goals.</p>
+
+      <h3>Article 2 — Booking &amp; Enrolment</h3>
+      <p>2.1 Inquiries should be made via Instagram <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a> or other contact channels communicated by the instructor.</p>
+      <p>2.2 After an initial conversation about your level, goals, and schedule, Sessions are scheduled by mutual agreement.</p>
+      <p>2.3 Booking a Session constitutes express and unconditional acceptance of these Terms.</p>
+      <p>2.4 We reserve the right to refuse enrolment in case of prior breach of these Terms, inappropriate conduct, or repeated late payment.</p>
+
+      <h3>Article 3 — Student's Responsibilities</h3>
+      <p>3.1 The Student agrees to:</p>
+      <ul>
+        <li>Arrive on time for scheduled Sessions</li>
+        <li>Wear comfortable, movement-appropriate clothing</li>
+        <li>Bring or have access to required equipment (typically a mat for outdoor sessions)</li>
+        <li>Practise diligently and follow the instructor's guidance</li>
+        <li>Treat the instructor and other Students with respect</li>
+      </ul>
+      <p>3.2 The Student warrants that any information provided about their physical condition is accurate and complete, and undertakes to notify the instructor promptly of any changes.</p>
+
+      <h3>Article 4 — Pricing &amp; Payment</h3>
+      <p>4.1 Current rates are displayed on the website. Prices are subject to change based on session type, location, and frequency, as noted in the pricing disclaimer.</p>
+      <p>4.2 Payment terms (timing, methods, packages) will be agreed at booking. Payment may be required in advance for packages, or per session, as agreed.</p>
+      <p>4.3 In the event of late payment, we reserve the right to suspend further Sessions until the outstanding amount is settled.</p>
+
+      <h3>Article 5 — Health &amp; Safety</h3>
+      <p>5.1 By participating in Sessions, the Student confirms that they are physically fit to undertake Pilates exercise, or have consulted a qualified medical professional.</p>
+      <p>5.2 The Student must inform the instructor of any medical condition, injury, recent surgery, or pregnancy that may affect their practice, ideally before the first Session.</p>
+      <p>5.3 The instructor will adapt exercises where reasonably possible based on disclosed conditions, but cannot adapt for conditions that have not been disclosed.</p>
+      <p>5.4 The Student participates at their own risk. K Body Control Pilates accepts no liability for injuries arising from undisclosed conditions, failure to follow instructions, or the Student's own negligence.</p>
+
+      <h3>Article 6 — Cancellation &amp; Rescheduling</h3>
+      <p>6.1 The Student may cancel or reschedule a Session with at least <strong>24 hours' notice</strong> before the scheduled start time, at no charge.</p>
+      <p>6.2 Cancellations made less than 24 hours before the scheduled start time may be counted as taken and charged in full.</p>
+      <p>6.3 If the Student arrives more than 15 minutes late, the Session may be considered cancelled but counted as taken.</p>
+      <p>6.4 If the instructor cancels a Session, it will not be charged and will be rescheduled at no extra cost at a mutually agreeable time.</p>
+
+      <h3>Article 7 — Ethics &amp; Non-Discrimination</h3>
+      <p>7.1 K Body Control Pilates is committed to creating an inclusive, respectful, and welcoming environment regardless of gender, age, ethnicity, religion, sexual orientation, or physical ability.</p>
+      <p>7.2 Any form of harassment, discrimination, threatening or violent behaviour, or inappropriate conduct will result in immediate termination of Sessions, with no refund of pre-paid amounts.</p>
+
+      <h3>Article 8 — Liability</h3>
+      <p>8.1 The instructor will use her professional skills to deliver high-quality instruction but cannot guarantee specific outcomes (e.g., weight loss, flexibility milestones, recovery from injury).</p>
+      <p>8.2 Liability for proven fault or negligence is limited to direct damages, excluding indirect or consequential losses, in accordance with Spanish law.</p>
+
+      <h3>Article 9 — Termination</h3>
+      <p>9.1 Either party may discontinue the instructor-student relationship at any time, with reasonable notice and without justification. Sessions already taken remain payable.</p>
+      <p>9.2 We reserve the right to terminate Sessions immediately and without refund in case of serious breach of these Terms, including but not limited to harassment, repeated late payment, or non-disclosure of relevant medical conditions.</p>
+
+      <h3>Article 10 — Personal Data</h3>
+      <p>We process personal data in accordance with the GDPR (Regulation (EU) 2016/679) and the Spanish Data Protection Act (LOPDGDD). See the <a href="#" data-modal="data">Data Protection</a> notice for full details.</p>
+
+      <h3>Article 11 — Intellectual Property</h3>
+      <p>All website content (text, images, photos, videos, logo) is the exclusive property of K Body Control Pilates or used with permission from rights holders (e.g., photographs by petrakallsback_studio). Reproduction without written authorisation is prohibited.</p>
+
+      <h3>Article 12 — Applicable Law &amp; Jurisdiction</h3>
+      <p>12.1 These Terms are governed by Spanish law.</p>
+      <p>12.2 Disputes shall be subject to the exclusive jurisdiction of the courts of Valencia, Spain, without prejudice to mandatory consumer protection rights granted by EU law to Students residing in France or Sweden.</p>
+
+      <h3>Article 13 — Modifications</h3>
+      <p>We may amend these Terms from time to time. Students will be informed of significant changes. Continued booking of Sessions after notification constitutes acceptance.</p>
+    </div>
+  </div>
+
+  <!-- LEGAL NOTICE -->
+  <div class="modal-overlay" id="modal-legal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2>Legal Notice</h2>
+      <p class="updated">Last updated: 10 June 2026</p>
+
+      <div class="intro-box">
+        <p>This Legal Notice is published in accordance with <strong>Article 10 of the Spanish Law 34/2002</strong> on Information Society Services and Electronic Commerce (LSSI-CE) and applicable EU regulations.</p>
+        <p style="margin-top:10px;"><strong>Current status:</strong> Karin Mazuir operates this Pilates instruction practice on an independent freelance basis. Spanish business registration (<em>autónomo</em>) is in progress; full administrative details — including registered address and tax identification (NIF/NIE) — will be published here once formalized.</p>
+      </div>
+
+      <h3>1. Website Publisher</h3>
+      <ul>
+        <li><strong>Practice name:</strong> K Body Control Pilates</li>
+        <li><strong>Operator:</strong> Karin Mazuir, independent Pilates instructor</li>
+        <li><strong>Location:</strong> Valencia, Spain</li>
+        <li><strong>Registered business address:</strong> <em>To be published upon completion of business registration. See "Current status" above.</em></li>
+        <li><strong>Tax identification (NIF/NIE):</strong> <em>To be published upon completion of business registration.</em></li>
+        <li><strong>Contact channel:</strong> Instagram <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a></li>
+        <li><strong>Email:</strong> <a href="mailto:karin.edv.mazuir@gmail.com">karin.edv.mazuir@gmail.com</a></li>
+      </ul>
+
+      <h3>2. Publication Director</h3>
+      <p>Karin Mazuir, as the independent instructor responsible for the practice and the content of this site.</p>
+
+      <h3>3. Website Host</h3>
+      <ul>
+        <li><strong>Service:</strong> GitHub Pages</li>
+        <li><strong>Company:</strong> GitHub, Inc.</li>
+        <li><strong>Address:</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States</li>
+        <li><strong>Website:</strong> <a href="https://github.com" target="_blank" rel="noopener noreferrer">www.github.com</a></li>
+      </ul>
+
+      <h3>4. Intellectual Property</h3>
+      <p>All content on this site (text, images, graphics, photos, videos, logo, icons) is the exclusive property of K Body Control Pilates and Karin Mazuir, or used with permission from rights holders (notably photographs by petrakallsback_studio).</p>
+      <p>This content is protected by Spanish intellectual property law (Royal Legislative Decree 1/1996) and international intellectual property treaties. Any reproduction, representation, modification, adaptation, public communication, or use of all or part of this site without prior written authorisation is strictly prohibited and may result in legal proceedings.</p>
+
+      <h3>5. Limitation of Liability</h3>
+      <p>We strive to ensure that information published on this site is accurate, current, and complete, but we cannot guarantee absolute accuracy. We accept no liability for:</p>
+      <ul>
+        <li>Direct or indirect damages arising from access to or use of this site</li>
+        <li>Errors, omissions, or outdated information</li>
+        <li>Temporary unavailability of the site</li>
+        <li>The content, privacy practices, or availability of external sites linked from this site</li>
+      </ul>
+
+      <h3>6. Hyperlinks</h3>
+      <p>This site contains hyperlinks to external websites (e.g., Instagram, Behold.so, photographer's account). We are not responsible for the content or practices of those external sites.</p>
+
+      <h3>7. Applicable Law &amp; Jurisdiction</h3>
+      <p>This site is governed by Spanish law. Any dispute arising from its use shall be subject to the exclusive jurisdiction of the courts of Valencia, Spain, without prejudice to mandatory consumer protection rights granted by EU law.</p>
+    </div>
+  </div>
+
+  <!-- DATA PROTECTION -->
+  <div class="modal-overlay" id="modal-data" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2>Data Protection</h2>
+      <p class="updated">Last updated: 10 June 2026</p>
+
+      <div class="intro-box">
+        <p>We take the protection of your privacy seriously. This document explains how we use and protect your personal data, in accordance with <strong>Regulation (EU) 2016/679 (GDPR)</strong> and the <strong>Spanish Organic Law 3/2018 on Personal Data Protection and Guarantee of Digital Rights (LOPDGDD)</strong>.</p>
+      </div>
+
+      <p>For any questions regarding the protection of your personal data, please contact us at <a href="mailto:karin.edv.mazuir@gmail.com">karin.edv.mazuir@gmail.com</a> or via Instagram <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a>.</p>
+
+      <h3>1. Data Controller</h3>
+      <ul>
+        <li><strong>Practice name:</strong> K Body Control Pilates</li>
+        <li><strong>Operator:</strong> Karin Mazuir, independent Pilates instructor</li>
+        <li><strong>Location:</strong> Valencia, Spain</li>
+        <li><strong>Business registration:</strong> <em>In progress. Full administrative details will be published upon formalization.</em></li>
+        <li><strong>Contact channel:</strong> Instagram <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a></li>
+        <li><strong>Email:</strong> <a href="mailto:karin.edv.mazuir@gmail.com">karin.edv.mazuir@gmail.com</a></li>
+      </ul>
+
+      <h3>2. What personal data do we process?</h3>
+      <p>We collect only the personal data necessary for our business. Categories may include:</p>
+      <h4>When you visit this website</h4>
+      <ul>
+        <li>Technical data automatically logged by our hosting provider (IP address, browser type, time of visit, pages viewed) for security and performance</li>
+        <li>Language preference stored locally in your browser (technical, anonymous)</li>
+      </ul>
+      <h4>When you contact us or book a Session</h4>
+      <ul>
+        <li>Identification &amp; contact details: first name, surname, Instagram handle, phone, email</li>
+        <li>Information you share about your physical condition, injuries, pregnancy, goals, or preferences relevant to safe and effective instruction</li>
+        <li>Schedule and attendance records, payment records</li>
+      </ul>
+      <p>We do <strong>not</strong> collect or sell your data to third parties for marketing purposes.</p>
+
+      <h3>3. Why do we process your data?</h3>
+      <p><strong>To perform the service contract with you (Art. 6(1)(b) GDPR):</strong></p>
+      <ul>
+        <li>Scheduling and delivering Sessions</li>
+        <li>Communicating about bookings, changes, and follow-ups</li>
+        <li>Tailoring exercises to your physical condition and goals</li>
+        <li>Issuing invoices and collecting payment</li>
+      </ul>
+      <p><strong>To comply with our legal obligations (Art. 6(1)(c) GDPR):</strong></p>
+      <ul>
+        <li>Retention of invoices and accounting documents as required by Spanish tax and commercial law</li>
+      </ul>
+      <p><strong>On the basis of our legitimate interest (Art. 6(1)(f) GDPR):</strong></p>
+      <ul>
+        <li>Maintaining the security and proper operation of this website</li>
+        <li>Improving the quality of our services</li>
+      </ul>
+      <p><strong>On the basis of your consent (Art. 6(1)(a) GDPR):</strong></p>
+      <ul>
+        <li>Any optional communications you have opted in to receive</li>
+      </ul>
+
+      <h3>4. Who has access to your data?</h3>
+      <p>Only Karin Mazuir, as the sole proprietor, has access to your personal data.</p>
+      <p>We do not sell, rent, or share your data with third parties for commercial purposes. Technical service providers (web hosting, accounting tools) may process data on our behalf as data processors under GDPR-compliant agreements.</p>
+
+      <h3>5. Data retention</h3>
+      <ul>
+        <li>Contact and session data: retained for the duration of the instructor-student relationship plus a reasonable period thereafter (typically 1-3 years)</li>
+        <li>Accounting and tax records: retained for the periods required by Spanish law (generally 4-6 years)</li>
+        <li>Website server logs: retained according to our hosting provider's policies (typically 30 days to 24 months)</li>
+      </ul>
+
+      <h3>6. International data transfers</h3>
+      <p>Some third-party services we use (GitHub Pages, Google Fonts, Behold.so, Instagram) may transfer data outside the European Economic Area. These providers use Standard Contractual Clauses approved by the European Commission or equivalent safeguards to ensure equivalent protection.</p>
+
+      <h3>7. Your rights and how to exercise them</h3>
+      <p>In accordance with the GDPR and Spanish Data Protection law, you have the following rights:</p>
+      <ul>
+        <li><strong>Right of access (Art. 15 GDPR):</strong> request information regarding the processing of your data and a copy of it</li>
+        <li><strong>Right to rectification (Art. 16 GDPR):</strong> request correction of inaccurate or incomplete data</li>
+        <li><strong>Right to erasure (Art. 17 GDPR):</strong> request the erasure of your data within the limits permitted by the regulations</li>
+        <li><strong>Right to restriction of processing (Art. 18 GDPR)</strong></li>
+        <li><strong>Right to data portability (Art. 20 GDPR):</strong> receive your data in a structured, commonly-used format</li>
+        <li><strong>Right to object (Art. 21 GDPR):</strong> object to the processing of your data on grounds relating to your particular situation; absolute right to object to direct marketing</li>
+        <li><strong>Right to withdraw your consent</strong> at any time, where the processing is based on consent (without affecting the lawfulness of prior processing)</li>
+      </ul>
+      <p><strong>To exercise your rights:</strong></p>
+      <ul>
+        <li>By email: <a href="mailto:karin.edv.mazuir@gmail.com">karin.edv.mazuir@gmail.com</a></li>
+        <li>By Instagram direct message: <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a></li>
+      </ul>
+      <p>We undertake to respond to your request within one month, in accordance with Article 12(3) of the GDPR.</p>
+
+      <h3>8. Right to lodge a complaint</h3>
+      <p>If you believe that the processing of your data does not comply with the regulations, you may lodge a complaint with a supervisory authority:</p>
+      <ul>
+        <li><strong>Spain (lead authority):</strong> Agencia Española de Protección de Datos (AEPD) — <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a></li>
+        <li><strong>France:</strong> Commission Nationale de l'Informatique et des Libertés (CNIL) — <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">www.cnil.fr</a></li>
+        <li><strong>Sweden:</strong> Integritetsskyddsmyndigheten (IMY) — <a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">www.imy.se</a></li>
+      </ul>
+
+      <h3>9. Changes to this notice</h3>
+      <p>We may update this notice from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted on the site when made.</p>
+    </div>
+  </div>
+
+  <!-- COOKIE POLICY -->
+  <div class="modal-overlay" id="modal-cookies" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2>Cookie Policy</h2>
+      <p class="updated">Last updated: 10 June 2026</p>
+
+      <div class="intro-box">
+        <p>In accordance with <strong>Article 22 of the Spanish Law 34/2002 (LSSI-CE)</strong> and the EU ePrivacy Directive (2002/58/EC), this policy explains how cookies and similar technologies are used on this website.</p>
+      </div>
+
+      <h3>1. What are cookies?</h3>
+      <p>Cookies are small text files stored on your device when you visit a website. They are used to remember preferences, improve performance, and analyse traffic.</p>
+
+      <h3>2. Cookies used on this website</h3>
+      <p>This website is intentionally minimal in its use of cookies and tracking technologies.</p>
+
+      <h4>Essential storage</h4>
+      <p>We use your browser's local storage to remember your language preference (EN/FR). This is technical, anonymous data that does not identify you and is not transmitted to any server. It cannot be disabled, as it is required for the language toggle to function. It remains until you clear your browser data.</p>
+
+      <h4>Analytics cookies — NONE</h4>
+      <p>We do not use Google Analytics, Meta Pixel, or any other analytics tools.</p>
+
+      <h4>Marketing cookies — NONE</h4>
+      <p>We do not use any advertising or remarketing cookies.</p>
+
+      <h3>3. Third-party cookies</h3>
+      <p>When you visit our site, the following third-party services are loaded and may set their own cookies according to their respective privacy policies:</p>
+      <ul>
+        <li><strong>Google Fonts</strong> (typography) — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        <li><strong>Behold.so</strong> (Instagram feed widget) — <a href="https://behold.so/privacy/" target="_blank" rel="noopener noreferrer">Behold Privacy Policy</a></li>
+        <li><strong>GitHub Pages</strong> (hosting) — <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Privacy Statement</a></li>
+      </ul>
+      <p>When you click any link to Instagram, you leave our site and <a href="https://privacycenter.instagram.com/policy" target="_blank" rel="noopener noreferrer">Instagram's privacy policy</a> applies.</p>
+      <p>We do not control these third-party cookies. If you wish to block them, you can do so via your browser settings.</p>
+
+      <h3>4. Managing your cookies</h3>
+      <p>You can manage or delete cookies through your browser settings. Most browsers allow you to:</p>
+      <ul>
+        <li>View which cookies are stored</li>
+        <li>Delete cookies individually or all at once</li>
+        <li>Block cookies from specific sites or all sites</li>
+      </ul>
+      <p>Please note that disabling certain cookies may affect the functionality of websites you visit.</p>
+
+      <h3>5. Contact</h3>
+      <p>For any questions regarding the use of cookies on this site, please contact us at <a href="mailto:karin.edv.mazuir@gmail.com">karin.edv.mazuir@gmail.com</a> or via Instagram <a href="https://www.instagram.com/kbodycontrolpilates/" target="_blank" rel="noopener noreferrer">@kbodycontrolpilates</a>.</p>
+    </div>
+  </div>
+
+  <!-- Modal interaction script -->
+  <script>
+    (function() {
+      const modalLinks = document.querySelectorAll('[data-modal]');
+      const overlays = document.querySelectorAll('.modal-overlay');
+
+      function openModal(id) {
+        const modal = document.getElementById('modal-' + id);
+        if (!modal) return;
+        // Close any open modal first
+        overlays.forEach(m => m.classList.remove('open'));
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        // Scroll modal to top
+        modal.scrollTop = 0;
+      }
+
+      function closeAllModals() {
+        overlays.forEach(m => {
+          m.classList.remove('open');
+          m.setAttribute('aria-hidden', 'true');
+        });
+        document.body.classList.remove('modal-open');
+      }
+
+      modalLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          openModal(link.dataset.modal);
+        });
+      });
+
+      overlays.forEach(overlay => {
+        overlay.addEventListener('click', e => {
+          if (e.target === overlay) closeAllModals();
+        });
+      });
+
+      document.querySelectorAll('.modal-close').forEach(btn => {
+        btn.addEventListener('click', closeAllModals);
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeAllModals();
       });
     })();
   </script>
