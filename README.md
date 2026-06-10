@@ -1,2 +1,0 @@
-# karin_pilatesbodycontrol
-Pilates
